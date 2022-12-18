@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {mapStyle, styles} from './styles';
 
-const MapScreen = () => {
+const MapScreen = ({navigation}: {navigation: any}) => {
+  useEffect(() => {
+    navigation.setOptions({title: 'Maps'});
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <MapView
