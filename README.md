@@ -15,7 +15,11 @@ Then clone repository https://github.com/lopez-evanedwin88/Search-Pin.git
 
 ```sh
 cd Search-Pin
-npm install
+
+`npm install`
+or if in case had error in installing dependency: ERESOLVE unable to resolve dependency tree
+run command `npm install --legacy-peer-deps`
+
 cd ios
 pod install
 ```
