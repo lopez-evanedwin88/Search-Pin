@@ -1,4 +1,4 @@
-export const getCities = (params: any) => {
+export const getCities = async (params: any) => {
   const options = {
     method: 'GET',
     headers: {
@@ -7,11 +7,13 @@ export const getCities = (params: any) => {
     },
   };
 
-  fetch(
+  const result = fetch(
     `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${params.name}`,
     options,
   )
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => response)
     .catch(err => console.error(err));
+
+  return result;
 };
