@@ -1,1 +1,5 @@
-export const TEST_ACTION = 'TEST_ACTION';
+export enum ActionType {
+  PLACE_REQUEST = 'PLACE_REQUEST',
+  PLACE_RESOLVE = 'PLACE_RESOLVE',
+  PLACE_REJECT = 'PLACE_REJECT',
+}

@@ -2,9 +2,13 @@ import {Button, Card, InputItem} from '@ant-design/react-native';
 import React, {useState} from 'react';
 
 import {Text, View} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {Route} from '../../constants/enums/Route';
+import {placeRequest} from '../../redux/main/actions';
 
 const MainScreen = ({navigation}: {navigation: any}) => {
+  const dispatch = useDispatch();
+
   const [search, setSearch] = useState('');
 
   return (
@@ -17,7 +21,7 @@ const MainScreen = ({navigation}: {navigation: any}) => {
       }}>
       <View>
         <Text style={{fontSize: 20, padding: 10}}>
-          Search & pin place on maps..
+          Search cities & place on maps..
         </Text>
       </View>
       <Card style={{width: '100%'}}>
@@ -37,7 +41,8 @@ const MainScreen = ({navigation}: {navigation: any}) => {
           <Button
             type="primary"
             onPress={() => {
-              navigation.navigate(Route.MAP_SCREEN);
+              // navigation.navigate(Route.MAP_SCREEN);
+              //dispatch(placeRequest({name: search}));
             }}>
             SEARCH
           </Button>
